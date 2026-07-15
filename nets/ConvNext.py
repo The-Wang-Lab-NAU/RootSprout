@@ -168,10 +168,6 @@ class ConvNeXt(nn.Module):
                 outs.append(x)
         return outs
 
-model_urls = {
-    "convnext_tiny_1k"      : "https://github.com/bubbliiiing/yolov5-pytorch/releases/download/v1.0/convnext_tiny_1k_224_ema_no_jit.pth",
-    "convnext_small_1k"     : "https://github.com/bubbliiiing/yolov5-pytorch/releases/download/v1.0/convnext_small_1k_224_ema_no_jit.pth",
-}
 
 
 def ConvNeXt_Tiny(pretrained=False, **kwargs):
