@@ -1,4 +1,4 @@
-# DeepGerm-Deep learning platform
+#  RootSprout-Deep learning platform
 
 Yu-Peng Zhu (朱玉鹏) <sup>1 </sup>, Peng Wang(汪鹏)<sup>1*,*4 </sup>
 
