@@ -15,11 +15,9 @@ Agricultural University, Nanjing 210095, China*
 
 ## Description of main documents
 
-(1) Test1_data/Test2_data - Deep Learning Test Dataset.
+(1) Image processing pipeline - Deep Learning /Step‑by‑step execution file for the image analysis pipeline.
 
-(2) nets - Deep Learning Network Architecture
-
-(3) Main_program - Main program, dynamic trait extraction
+(2) RootScrout_GUI - Users can launch the analysis pipeline by running the provided GUI executable
 
 ## Install Python, Anaconda and Libraries
 
