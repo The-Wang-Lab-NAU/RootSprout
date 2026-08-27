@@ -23,7 +23,7 @@ Agricultural University, Nanjing 210095, China*
 
 ## Install Python, Anaconda and Libraries
 
-Setting up the Python environment to run the image processing (*u*-XRF) source code
+Setting up the Python environment to run the image processing source code
 
 1. **Install Python**
    Getting Started: If you are new to Python, we recommend reading the official Python beginner's guide ([https://wiki.python.org/moin/BeginnersGuide](https://wiki.python.org/moin/BeginnersGuide)).
