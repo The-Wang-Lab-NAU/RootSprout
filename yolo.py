@@ -17,29 +17,16 @@ import sys
 import os
 
 def get_base_path():
-    """获取可执行文件或脚本所在目录（兼容 PyInstaller 打包）"""
+ 
     if getattr(sys, 'frozen', False):
-        # 打包后，sys._MEIPASS 指向临时解压目录
+    
         return sys._MEIPASS
     else:
-        # 开发环境
+
         return os.path.dirname(os.path.abspath(__file__))
 
 
-# class YOLO(object):
-#     _defaults = {
-       
-#         "model_path"        : "model_data/Weights_yolo.pth",
-#         "classes_path"      : 'model_data/voc_classes.txt',
-#         "anchors_path"      : 'model_data/yolo_anchors.txt',
-#         "anchors_mask"      : [[6, 7, 8], [3, 4, 5], [0, 1, 2]],
-#         "input_shape"       : [640, 640],
-#         "phi"               : 'l',
-#         "confidence"        : 0.5,
-#         "nms_iou"           : 0.3,
-#         "letterbox_image"   : True,
-#         "cuda"              : True,
-#     }
+
     
 class YOLO(object):
     _defaults = {
