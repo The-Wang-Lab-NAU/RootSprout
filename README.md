@@ -1,4 +1,4 @@
-#  RootSprout-Deep learning platform
+#  RootSprout
 
 <img width="1339" height="1047" alt="image" src="https://github.com/user-attachments/assets/14c6b977-35f2-408d-93d6-9a6ba28c5277" />
 
