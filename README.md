@@ -17,7 +17,7 @@ College of Resources and Environmental Sciences, Nanjing, Jiangsu 210095, China*
 and Health, Academy for Advanced Interdisciplinary Studies, Nanjing
 Agricultural University, Nanjing 210095, China*
 
-<sup> * </sup>Correspondence for the source code:Yu-Peng Zhu([2023203050@stu.njau.edu.cn](mailto:2018101176@njau.edu.cn)) and Peng Wang ([p.wang3@naju.edu.cn](mailto:p.wang3@naju.edu.cn)) 
+<sup> * </sup>Correspondence for the source code:Yu-Peng Zhu([2023203050@stu.njau.edu.cn](mailto:2018101176@njau.edu.cn))， Peitong Wang([wangpeitong@njau.edu.cn](mailto:wangpeitong@njau.edu.cn)) and Peng Wang ([p.wang3@naju.edu.cn](mailto:p.wang3@naju.edu.cn)) 
 
 
 - Project page: https://github.com/The-Wang-Lab-NAU/RootSprout
@@ -316,7 +316,7 @@ If you use RootSprout in your research, please cite our paper:
 
 ```bibtex
 @article{RootSprout2026,
-  title   = {RootSprout: A deep learning-powered phenotyping platform for rapid profiling arsenic tolerance in germinating rice},
+  title   = {RootSprout: A deep learning-powered phenotypic screening platform for stress-tolerant rice mutants},
   
 }
 ```
