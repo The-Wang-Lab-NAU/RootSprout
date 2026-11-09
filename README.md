@@ -32,6 +32,7 @@ Agricultural University, Nanjing 210095, China*
 ## 1. What RootSprout Can Do
 
 - Batch process time-series images
+- Manually select regions of interest (ROI) to restrict analysis to specific seeds or panels.
 - Automatically detect germinated and non-germinated seed regions
 - Track seeds across frames and reconstruct movement trajectories
 - Segment seeds, roots, and seedlings
@@ -57,7 +58,8 @@ Agricultural University, Nanjing 210095, China*
 - PyQt5 5.15.10
 - PyTorch 1.13.1
 - OpenCV 4.7.0.72
-- Other dependencies are listed in Section 4
+- Ultralytics (Source code included in the project directory)
+- Other dependencies are listed in Section 5
 
 ---
 
@@ -71,7 +73,7 @@ Agricultural University, Nanjing 210095, China*
 2. Find the **Assets** section under the latest release.
 
 3. Download the following files:
-   - **Weight files**: model weights (YOLO and UNet)
+   - **Weight files**: Weight files: model weights (Weights_yolo.pt for YOLO and Weights_UNET.pth for UNet)
    - **Test_image**: example image sequences for quick testing
 
 4. After unzipping the weight files, place the following files into the **`model_data/`** directory:
@@ -79,10 +81,10 @@ Agricultural University, Nanjing 210095, China*
 ```text
 RootSprout/
 ├── model_data/
-│   ├── voc_classes.txt
+│
 │   ├── Weights_UNET.pth
-│   ├── Weights_yolo.pth
-│   └── yolo_anchors.txt
+│   ├── Weights_yolo.pt
+│   
 └── ...
 ```
 
@@ -133,6 +135,7 @@ pip install numpy==1.23.5
 pip install scipy==1.10.0
 pip install seaborn==0.12.2
 pip install PyQt5==5.15.10
+pip install polars py-cpuinfo thop
 ```
 
 Alternatively, you can try conda:
@@ -157,14 +160,10 @@ python RootScrout_GUI.py
 ```text
 RootSprout/
 ├── Time-series data_sorted/       # Time-series image data (example/test input)
-├── img_crop/                      # Cropped images or intermediate results
 ├── model_data/                    # Model weights
-│   ├── voc_classes.txt
+│   ├── Weights_yolo.pt                    # YOLO weights (Ultralytics)
 │   ├── Weights_UNET.pth
-│   ├── Weights_yolo.pth
-│   └── yolo_anchors.txt
-├── nets/                          # Network definitions (YOLO/UNet architectures)
-├── utils/                         # General utility functions
+├── ultralytics/                   # Local Ultralytics source code (do not delete)
 ├── utils_unet/                    # UNet-related utility functions
 ├── Image processing pipeline.ipynb # Image processing pipeline notebook
 ├── LICENSE.txt                    # License
@@ -173,7 +172,6 @@ RootSprout/
 ├── unet.py                        # UNet segmentation module
 └── yolo.py                        # YOLO detection module
 ```
-
 ---
 
 ## 5. Dependency List
@@ -190,8 +188,9 @@ RootSprout/
 | scipy | 1.10.0 |
 | seaborn | 0.12.2 |
 | PyQt5 | 5.15.10 |
-
+|ultralytics|	Local Directory|
 Other dependencies such as Pillow and torchvision can be installed as needed.
+-(Note: Since the ultralytics folder is included locally, please ensure its sub-dependencies like polars, thop, etc., are installed in your Python environment.)
 
 ---
 
@@ -209,12 +208,17 @@ After launching the GUI, follow Step 1–Step 5:
 3. **Step 3: Set Scale**  
    Enter the `mm/pixel` value, e.g., `0.216541`.  
    This parameter converts pixels to real-world length.
-
-4. **Step 4: Click Start Analysis**  
+4.**Step 4: (Optional) Select Regions Manually**: 
+   If you only want to analyze specific seeds or panels, click "Select Regions Manually...".
+   Left-click and drag to draw a rectangular box around the seeds you want to process. You can draw multiple boxes.
+   Press Backspace to undo the last box, or click Clear All to start over.
+   Click Confirm. The software will only track and extract traits for the seeds whose centroids fall within these boxes.
+   If skipped, the software will automatically divide the image into 6 panels based on the tray edges.
+5. **Step 5: Click Start Analysis**  
    The software will automatically detect, track, segment, and extract traits.  
    The log panel on the right shows the progress.
 
-5. **Step 5: Click View Traits Data**  
+6. **Step 6: Click View Traits Data**  
    View the output CSV tables.  
    Double-click a row to view the corresponding time-series cropped images for that seed.
 
@@ -273,10 +277,10 @@ Make sure `yolo.py`, `unet.py`, and the main program are in the same directory, 
 Download the weights from the **Weight files** section on the Releases page. After unzipping, place them into `model_data/` and ensure the following files exist:
 
 ```text
-model_data/voc_classes.txt
+
 model_data/Weights_UNET.pth
 model_data/Weights_yolo.pth
-model_data/yolo_anchors.txt
+
 ```
 
 ### 5) Processing is slow?
@@ -300,7 +304,6 @@ pyinstaller --noconfirm --onedir --windowed --name RootScrout ^
   --add-data "yolo.py;." ^
   --add-data "unet.py;." ^
   --add-data "nets;nets" ^
-  --add-data "utils;utils" ^
   --add-data "utils_unet;utils_unet" ^
   --add-data "model_data;model_data" ^
   RootScrout_GUI.py
@@ -320,7 +323,7 @@ If you use RootSprout in your research, please cite our paper:
 
 ```bibtex
 @article{RootSprout2026,
-  title   = {RootSprout: A deep learning-powered phenotypic screening platform for stress-tolerant rice mutants},
+  title   = {RootSprout: A deep learning-powered platform for rapid phenotypic screening of stress-tolerant rice mutants},
   
 }
 ```
