@@ -1,6 +1,7 @@
 #  RootSprout
 
-<img width="744" height="582" alt="image" src="https://github.com/user-attachments/assets/9b3cc5e9-f4e1-43ba-aea2-d93469c5689a" />
+<img width="1126" height="922" alt="image" src="https://github.com/user-attachments/assets/c1058586-6d18-4f11-b2d5-ff8a3a7739a3" />
+
 
 
 
