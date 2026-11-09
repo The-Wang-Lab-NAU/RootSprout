@@ -3,7 +3,8 @@
 <img width="1125" height="934" alt="image" src="https://github.com/user-attachments/assets/bb24e4b4-1333-4153-b6f7-87247cc21b66" />
 
 
-<img width="1339" height="1047" alt="image" src="https://github.com/user-attachments/assets/14c6b977-35f2-408d-93d6-9a6ba28c5277" />
+<img width="1283" height="1000" alt="image" src="https://github.com/user-attachments/assets/1ab6bf87-35ec-4fe5-93cd-cc8d7479f9c5" />
+
 
 
 RootSprout is a software platform for dynamic root phenotyping during early seed germination. It combines YOLO object detection and UNet pixel-wise segmentation to automatically identify germinated and non-germinated seeds, track seed regions, and extract traits such as radicle length, root area, root perimeter, 2DCI, and germination rate. The results are saved as CSV files and image sequences.
