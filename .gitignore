@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.vscode/
+model_data/Weights_UNET.pth
+model_data/Weights_yolo.pt
+*.pt
+*.pth
