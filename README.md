@@ -327,7 +327,7 @@ If you use RootSprout in your research, please cite our paper:
 
 ```bibtex
 @article{RootSprout2026,
-  title   = {RootSprout: A deep learning-powered platform for rapid phenotypic screening of stress-tolerant rice mutants},
+  title   = {RootSprout: A time-resolved root phenotyping framework for mitigating germination asynchrony and rapid screening of stress-tolerant rice mutants},
   
 }
 ```
